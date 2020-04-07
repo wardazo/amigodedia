@@ -1,0 +1,116 @@
+/* Import Bulma Utilities */
+@import '~bulma/sass/utilities/initial-variables';
+@import '~bulma/sass/utilities/functions';
+
+/* Variable changes go here */
+
+// Colours
+$primary: #FA990E;
+$link: #FA990E;
+$size-1:	3rem;
+$size-2:	48px;
+$size-3:	34px;
+$size-5:	21px;
+$size-7:	16px;
+$body-size: 18px;
+$section-padding: 2rem 1.5rem	;
+
+$text: #484848;
+$family-primary: 'Roboto',"Helvetica", "Arial", sans-serif;
+
+$green: #B4D53D;
+$blue: #6CCEDE;
+$orange: #FA990E;
+$darkgreen: #114B0B;
+
+$footer-background-color: #fff;
+$footer-padding: 3rem 1.5rem 0;
+
+/* Import the rest of Bulma */
+
+
+
+@import '~bulma';
+
+
+
+.is-size-1,
+.is-size-2,
+.is-size-3{
+  font-family: 'League Spartan', sans-serif;
+}
+
+.is-size-3{
+  line-height: 1.2em;
+  padding-bottom:30px
+}
+
+.absolute{
+  position:absolute;
+}
+
+.rounded{
+  border-radius: 10px;
+}
+
+p{
+  margin-bottom: 20px;
+}
+
+.has-background-green{
+  background-color: $green;
+  color:white;
+}
+.has-background-blue{
+  background-color: $blue;
+  color:white;
+}
+.has-background-orange{
+  background-color: $orange;
+  color:white;
+}
+
+.num{
+  border: 3px solid white;
+  border-radius: 100px;
+  width:40px;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+  margin-bottom: 20px;
+}
+
+.pad {
+  padding: 20px;
+}
+
+.pad .text {
+  font-family: Helvetica, sans-serif;
+  padding-bottom: 32px;
+  font-weight: bold;
+}
+
+$spaceamounts: (0, 5,  10, 15,  20, 25,  30, 35,  40, 45,  50); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+  .p-#{$space} {
+    padding: #{$space}px !important;
+  }
+  .m-#{$space} {
+    padding: #{$space}px !important;
+  }
+}
+
+
+
